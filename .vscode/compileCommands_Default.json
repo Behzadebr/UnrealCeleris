@@ -1,0 +1,498 @@
+[
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Celeris2024.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Celeris2024.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Celeris2024.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Shaders\\BoundaryPass.usf",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Shaders\\MultiplyShader.usf",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Shaders\\Pass1.usf",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Shaders\\Pass2.usf",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Shaders\\Pass3_Bous.usf",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Shaders\\Pass3_NLSW.usf",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Shaders\\TriDiag_PCRx.usf",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Shaders\\TriDiag_PCRy.usf",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Shaders\\WaveDisplay.usf",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\BoundaryPassHandler.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\BoundaryPassHandler.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\ConstantsCalculator.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\ConstantsCalculator.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\DepthDataBoundaryHandler.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\DepthDataBoundaryHandler.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\DepthFileLoader.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\DepthFileLoader.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\DepthSurfaceGenerator.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\DepthSurfaceGenerator.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\InitialOceanElevationGenerator.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\InitialOceanElevationGenerator.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\ParametersLoader.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\ParametersLoader.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\Pass1Handler.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\Pass1Handler.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\Pass2Handler.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\Pass2Handler.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\Pass3_BousHandler.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\Pass3_BousHandler.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\Pass3_NLSWHandler.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\Pass3_NLSWHandler.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\RenderTargetFiller.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\RenderTargetFiller.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\RenderTargetReader.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\RenderTargetReader.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\RenderTargetSaver.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\RenderTargetSaver.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\ShaderManager.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\ShaderManager.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\ShipProperties.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\ShipProperties.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\SimulationParameters.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\SimulationParameters.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\Simulator.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\Simulator.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\TextureCreator.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\TextureCreator.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\TextureManager.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\TextureManager.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\TriDiag_PCRxHandler.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\TriDiag_PCRxHandler.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\TriDiag_PCRyHandler.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\TriDiag_PCRyHandler.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\TridiagCoefGenerator.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\TridiagCoefGenerator.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\WaveDisplayHandler.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\WaveDisplayHandler.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\WaveLoader.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\bebra\\Desktop\\Celeris2024\\Source\\Celeris2024\\Simulation\\WaveLoader.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\bebra\\Desktop\\Celeris2024\\.vscode\\compileCommands_Default\\Celeris2024.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	}
+]

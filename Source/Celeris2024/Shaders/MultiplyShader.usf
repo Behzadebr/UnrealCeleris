@@ -1,0 +1,17 @@
+// MultiplyShader.usf
+#pragma once
+
+#include "/Engine/Private/Common.ush"
+
+RWTexture2D<float4> OutputTexture;
+Texture2D<float4> InputTexture;
+
+float Theta;
+
+[numthreads(32, 32, 1)]
+void MainCS(uint3 DTid : SV_DispatchThreadID)
+{
+    float4 Pixel = InputTexture.Load(int3(DTid.xy, 0));
+    Pixel *= Theta;
+    OutputTexture[DTid.xy] = Pixel;
+}

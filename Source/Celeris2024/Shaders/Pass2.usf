@@ -1,0 +1,133 @@
+#pragma once
+
+#include "/Engine/Private/Common.ush"
+
+Texture2D<float4> txH;
+Texture2D<float4> txU;
+Texture2D<float4> txV;
+Texture2D<float4> txBottom;
+Texture2D<float4> txC;
+
+int width;
+int height;
+float g;
+float half_g;
+float dx;
+float dy;
+
+RWTexture2D<float4> txXFlux;
+RWTexture2D<float4> txYFlux;
+
+float NumericalFlux(float aplus, float aminus, float Fplus, float Fminus, float Udifference)
+{
+    float numerical_flux;
+
+    if (aplus - aminus != 0.0)
+    {
+        numerical_flux = (aplus * Fminus - aminus * Fplus + aplus * aminus * Udifference) / (aplus - aminus);
+    }
+    else
+    {
+        numerical_flux = 0.0;
+    }
+
+    return numerical_flux;
+}
+
+void ScalarAntiDissipation(float uplus, float uminus, float aplus, float aminus, float epsilon, out float phi)
+{
+    float Fr;
+    if (aplus != 0 && aminus != 0)
+    {
+        if (abs(uplus) >= abs(uminus))
+        {
+            Fr = abs(uplus) / aplus;
+        }
+        else
+        {
+            Fr = abs(uminus) / aminus;
+        }
+        phi = (Fr + epsilon) / (Fr + 1);
+    }
+    else if (aplus == 0 || aminus == 0)
+    {
+        phi = epsilon;
+    }
+}
+
+[numthreads(32, 32, 1)]
+void MainCS(uint3 id : SV_DispatchThreadID) {
+    
+    int2 idx = int2(id.xy);
+
+    int2 rightIdx = min(idx + int2(1, 0), int2(width-1, height-1));
+    int2 upIdx = min(idx + int2(0, 1), int2(width-1, height-1));
+    int2 leftIdx = max(idx + int2(-1, 0), int2(0, 0));
+    int2 downIdx = max(idx + int2(0, -1), int2(0, 0));
+    
+    float4 h_vec = txH.Load(int3(idx, 0));
+    float2 h_here = h_vec.xy;
+    
+    float hW_east = txH.Load(int3(rightIdx, 0)).w;
+    float hS_north = txH.Load(int3(upIdx, 0)).z;
+    
+    float2 u_here = txU.Load(int3(idx, 0)).xy;
+    float uW_east = txU.Load(int3(rightIdx, 0)).w;
+    float uS_north = txU.Load(int3(upIdx, 0)).z;
+    
+    float2 v_here = txV.Load(int3(idx, 0)).xy;
+    float vW_east = txV.Load(int3(rightIdx, 0)).w;
+    float vS_north = txV.Load(int3(upIdx, 0)).z;
+
+    float2 cNE = sqrt((g * h_here));
+    float cW = sqrt((g * hW_east));
+    float cS = sqrt((g * hS_north));
+
+    float aplus = max(max(u_here.y + cNE.y, uW_east + cW), 0.0);
+    float aminus = min(min(u_here.y - cNE.y, uW_east - cW), 0.0);
+    float bplus = max(max(v_here.x + cNE.x, vS_north + cS), 0.0);
+    float bminus = min(min(v_here.x - cNE.x, vS_north - cS), 0.0);
+
+    float B_here = txBottom.Load(int3(idx, 0)).z;
+    float B_south = txBottom.Load(int3(downIdx, 0)).z;
+    float B_north = txBottom.Load(int3(upIdx, 0)).z;
+    float B_west = txBottom.Load(int3(leftIdx, 0)).z;
+    float B_east = txBottom.Load(int3(rightIdx, 0)).z;
+    float dB = max(abs(B_south-B_here),max(abs(B_north-B_here),max(abs(B_west-B_here),abs(B_east-B_here))));
+
+    float near_dry = txBottom.Load(int3(idx, 0)).w;
+
+    float2 c_here = txC.Load(int3(idx, 0)).xy;
+    float cW_east = txC.Load(int3(rightIdx, 0)).w;
+    float cS_north = txC.Load(int3(upIdx, 0)).z;
+
+    float phix = 0.5;
+    float phiy = 0.5;
+
+    float minH = min(h_vec.w, min(h_vec.z, min(h_vec.y, h_vec.x)));
+    float mass_diff_x = (hW_east - h_here.y);
+    float mass_diff_y = (hS_north - h_here.x);
+    
+    if (minH * minH <= 3.0 * dx * dB)
+    {
+        mass_diff_x = 0.;
+        mass_diff_y = 0.;
+        phix = 1.0;
+        phiy = 1.0;
+    }
+
+    float4 xflux = float4(
+        NumericalFlux(aplus, aminus, hW_east * uW_east, h_here.y * u_here.y, mass_diff_x),
+        NumericalFlux(aplus, aminus, hW_east * uW_east * uW_east, h_here.y * u_here.y * u_here.y, hW_east * uW_east - h_here.y * u_here.y),
+        NumericalFlux(aplus, aminus, hW_east * uW_east * vW_east, h_here.y * u_here.y * v_here.y, hW_east * vW_east - h_here.y * v_here.y),
+        NumericalFlux(aplus, aminus, hW_east * uW_east * cW_east, h_here.g * u_here.g * c_here.g, phix * (hW_east * cW_east - h_here.g * c_here.g)));
+        
+    float4 yflux = float4(
+        NumericalFlux(bplus, bminus, hS_north * vS_north, h_here.x * v_here.x, mass_diff_y),
+        NumericalFlux(bplus, bminus, hS_north * uS_north * vS_north, h_here.x * u_here.x * v_here.x, hS_north * uS_north - h_here.x * u_here.x),
+        NumericalFlux(bplus, bminus, hS_north * vS_north * vS_north, h_here.x * v_here.x * v_here.x, hS_north * vS_north - h_here.x * v_here.x),
+        NumericalFlux(bplus, bminus, hS_north * cS_north * vS_north, h_here.x * c_here.x * v_here.x, phiy * (hS_north * cS_north - h_here.x * c_here.x)));
+
+    txXFlux[id.xy] = xflux;
+    txYFlux[id.xy] = yflux;
+}

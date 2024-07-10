@@ -1,0 +1,45 @@
+#pragma once
+
+#include "/Engine/Private/Common.ush"
+
+Texture2D<float4> txState;
+Texture2D<float4> txBottom;
+Texture2D<float4> txAuxiliary2;
+Texture2D<float4> txShipPressure;
+
+int width;
+int height;
+float dx;
+float dy;
+float epsilon;
+
+RWTexture2D<float4> txDisplay;
+
+[numthreads(32, 32, 1)]
+void MainCS(uint3 id : SV_DispatchThreadID)
+{
+    int2 idx = int2(id.xy);
+    float2 uv = float2(idx) / float2(width, height);
+
+    float4 waves = txState.Load(int3(idx, 0));
+    float4 pressure = txShipPressure.Load(int3(idx, 0));
+    float4 scalar_conc = waves;
+    float4 bottom = txBottom.Load(int3(idx, 0));
+    float4 breaking = 0.0 * txAuxiliary2.Load(int3(idx, 0));
+    float speed = sqrt(waves.g * waves.g + waves.b * waves.b);
+
+    float3 color;
+    if (bottom.b + sqrt(epsilon) > waves.r)
+    {
+        color = float3(210.0 / 255.0, 180.0 / 255.0, 140.0 / 255.0) + 0.02 * bottom.b;
+    }
+    else
+    {
+        float3 color_br = float3(breaking.a, breaking.a, breaking.a);
+        float3 color_wave = float3(0.5, 0.5, 1.0) + 0.1 * (waves.r + 15.0 * pressure.r);
+        float3 color_scalar = float3(scalar_conc.a, 0.0, 0.0);
+        color = color_br * breaking.a + color_wave * (1 - breaking.a) + color_scalar;
+    }
+
+    txDisplay[idx] = float4(color, 1.0);
+}

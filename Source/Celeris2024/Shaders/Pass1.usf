@@ -1,0 +1,234 @@
+// Pass1.usf
+#pragma once
+
+#include "/Engine/Private/Common.ush"
+
+Texture2D<float4> txState;
+Texture2D<float4> txBottom;
+Texture2D<float4> txAuxiliary2;
+
+RWTexture2D<float4> txH;
+RWTexture2D<float4> txU;
+RWTexture2D<float4> txV;
+RWTexture2D<float4> txNormal;
+RWTexture2D<float4> txAuxiliary2Out;
+RWTexture2D<float4> txW;
+RWTexture2D<float4> txC;
+
+int width;
+int height;
+float one_over_dx;
+float one_over_dy;
+float dissipation_threshold;
+float TWO_THETA;
+float epsilon;
+float whiteWaterDecayRate;
+float dt;
+float base_depth;
+
+float MinMod(float a, float b, float c)
+{
+    if (a > 0.0 && b > 0.0 && c > 0.0)
+    {
+        return min(min(a, b), c);
+    }
+    else if (a < 0.0 && b < 0.0 && c < 0.0)
+    {
+        return max(max(a, b), c);
+    }
+    else
+    {
+        return 0.0;
+    }
+}
+
+void Reconstruct_w(float west, float here, float east, float TWO_THETAc, out float out_west, out float out_east, out float standard_deviation)
+{
+    float z1 = TWO_THETAc * (here - west);
+    float z2 = (east - west);
+    float z3 = TWO_THETAc * (east - here);
+
+    float dx_grad_over_two = 0.25 * MinMod(z1, z2, z3);
+    float mu = 0.5 * (z1 + z2 + z3) / 3.0;
+    standard_deviation = sqrt(((z1 - mu) * (z1 - mu) + (z2 - mu) * (z2 - mu) + (z3 - mu) * (z3 - mu)) / 3.0);
+    out_east = here + dx_grad_over_two;
+    out_west = here - dx_grad_over_two;
+}
+
+void Reconstruct(float west, float here, float east, float TWO_THETAc, out float out_west, out float out_east, out float standard_deviation)
+{
+    float z1 = TWO_THETAc * (here - west);
+    float z2 = (east - west);
+    float z3 = TWO_THETAc * (east - here);
+
+    float dx_grad_over_two = 0.25 * MinMod(z1, z2, z3);
+    float mu = 0.5 * (z1 + z2 + z3) / 3.0;
+    standard_deviation = sqrt(((z1 - mu) * (z1 - mu) + (z2 - mu) * (z2 - mu) + (z3 - mu) * (z3 - mu)) / 3.0);
+    out_east = here + dx_grad_over_two;
+    out_west = here - dx_grad_over_two;
+}
+
+void Correct_Edges(float B_west, float B_east, inout float w_west, inout float w_east, inout float H_west, inout float H_east, inout float U_west, inout float U_east, inout float V_west, inout float V_east, float h_here, float h_west, float h_east)
+{
+    if (h_here <= 0.0f)
+    { 
+        w_east = w_west;
+        w_west = w_west;
+
+        H_east = 0.0f;
+        H_west = 0.0f;
+        U_east = 0.0f;
+        U_west = 0.0f;
+        V_east = 0.0f;
+        V_west = 0.0f;
+    }
+    else if (w_west <= B_east && h_east <= 0.0f)
+    { 
+        w_east = w_west;
+        w_west = w_west;
+    }
+    else if (w_east <= B_west && h_west <= 0.0f)
+    {
+        w_east = w_east;
+        w_west = w_east;
+    }
+}
+
+void CorrectW(float B_west, float B_east, float w_bar, inout float w_west, inout float w_east) {
+    if (w_east < B_east) {
+        w_east = B_east;
+        w_west = max(B_west, 2.0 * w_bar - B_east);
+    } else if (w_west < B_west) {
+        w_east = max(B_east, 2.0 * w_bar - B_west);
+        w_west = B_west;
+    }
+}
+
+void CalcUVC(float4 h, float4 hu, float4 hv, float4 hc, out float4 utemp, out float4 vtemp, out float4 ctemp) {
+    float4 h2 = h * h;
+
+    float4 divide_by_h = 2.0 * h / (h2 + max(h2, epsilon));
+
+    utemp = divide_by_h * hu;
+    vtemp = divide_by_h * hv;
+    ctemp = divide_by_h * hc;
+
+    float4 speed = sqrt(utemp * utemp + vtemp * vtemp);
+    float4 Fr = speed / sqrt(9.81 / divide_by_h);
+    float Frumax = max(Fr.x, max(Fr.y, max(Fr.z, Fr.w)));
+    float Fr_maxallowed = 3.0; 
+    if (Frumax > Fr_maxallowed)
+    {
+        float Fr_red = Fr_maxallowed / Frumax;
+        utemp = utemp * Fr_red;
+        vtemp = vtemp * Fr_red;
+    }
+}
+
+[numthreads(32, 32, 1)]
+void MainCS(uint3 id : SV_DispatchThreadID) {
+
+    int2 idx = int2(id.xy);
+
+    int2 leftIdx = max(idx + int2(-1, 0), int2(0, 0));
+    int2 rightIdx = min(idx + int2(1, 0), int2(width-1, height-1));
+    int2 downIdx = max(idx + int2(0, -1), int2(0, 0));
+    int2 upIdx = min(idx + int2(0, 1), int2(width-1, height-1));
+
+    float4 in_here  =  txState.Load(int3(idx, 0));
+    float4 in_south =  txState.Load(int3(downIdx, 0));
+    float4 in_north =  txState.Load(int3(upIdx, 0));
+    float4 in_west  =  txState.Load(int3(leftIdx, 0));
+    float4 in_east  =  txState.Load(int3(rightIdx, 0));
+
+    float4 B = float4(0.0, 0.0, 0.0, 0.0);
+    B.xy = txBottom.Load(int3(idx, 0)).xy;
+    B.z =  txBottom.Load(int3(downIdx, 0)).x;
+    B.w =  txBottom.Load(int3(leftIdx, 0)).y;
+
+    float B_here = txBottom.Load(int3(idx, 0)).z;
+    float B_south = txBottom.Load(int3(downIdx, 0)).z;
+    float B_north = txBottom.Load(int3(upIdx, 0)).z;
+    float B_west = txBottom.Load(int3(leftIdx, 0)).z;
+    float B_east = txBottom.Load(int3(rightIdx, 0)).z;
+
+    float h_here = in_here.x - B_here;
+    float h_south = in_south.x - B_south;
+    float h_north = in_north.x - B_north;
+    float h_west = in_west.x - B_west;
+    float h_east = in_east.x - B_east;
+    
+    float4 w = float4(0.0, 0.0, 0.0, 0.0);
+    float4 hu = float4(0.0, 0.0, 0.0, 0.0);
+    float4 hv = float4(0.0, 0.0, 0.0, 0.0);
+    float max_sd2 = 0.0;
+    float temp_sd2 = 0.0;
+
+    float wetdry = min(B.w,min(B.z, min(B.y, B.x)));
+    float rampcoef=min(max(0.0, wetdry / (0.02 * base_depth)), 1.0);
+    float TWO_THETAc=TWO_THETA*rampcoef + 2.0*(1.0-rampcoef);
+    float4 h = float4(0.0, 0.0, 0.0, 0.0);
+    
+    if (wetdry >= 0)
+    { 
+        Reconstruct(h_west, h_here, h_east, TWO_THETAc, h.w, h.y, temp_sd2);
+        max_sd2 = temp_sd2 * one_over_dx;
+        Reconstruct(h_south, h_here, h_north, TWO_THETAc, h.z, h.x, temp_sd2);
+        max_sd2 = max(max_sd2, temp_sd2 * one_over_dy);
+        w = h + B;
+    }
+    else
+    {
+        Reconstruct_w(in_west.x, in_here.x, in_east.x, TWO_THETAc, w.w, w.y, temp_sd2);
+        max_sd2 = temp_sd2 * one_over_dx;
+        Reconstruct_w(in_south.x, in_here.x, in_north.x, TWO_THETAc, w.z, w.x, temp_sd2);
+        max_sd2 = max(max_sd2, temp_sd2 * one_over_dy);
+        h = w - B;
+    }
+
+    Reconstruct(in_west.y, in_here.y, in_east.y, TWO_THETAc, hu.w, hu.y, temp_sd2);
+    Reconstruct(in_south.y, in_here.y, in_north.y, TWO_THETAc, hu.z, hu.x, temp_sd2);
+
+    Reconstruct(in_west.z, in_here.z, in_east.z, TWO_THETAc, hv.w, hv.y, temp_sd2);
+    Reconstruct(in_south.z, in_here.z, in_north.z, TWO_THETAc, hv.z, hv.x, temp_sd2);
+
+    float4 hc;
+    Reconstruct(in_west.w, in_here.w, in_east.w, TWO_THETAc, hc.w, hc.y, temp_sd2);
+    Reconstruct(in_south.w, in_here.w, in_north.w, TWO_THETAc, hc.z, hc.x, temp_sd2);
+
+    float4 u, v, c;
+    CalcUVC(h, hu, hv, hc, u, v, c);
+
+    Correct_Edges(B.w, B.y, w.w, w.y, h.w, h.y, u.w, u.y, v.w, v.y, h_here, h_west, h_east);
+    Correct_Edges(B.z, B.x, w.z, w.x, h.z, h.x, u.z, u.x, v.z, v.x, h_here, h_south, h_north);
+
+    float3 normal;
+    normal.x = (in_west.x - in_east.x) * one_over_dx;
+    normal.y = (in_south.x - in_north.x) * one_over_dy;
+    normal.z = 2.0f;
+    normal = normalize(normal);
+
+    float maxInundatedDepth = max((h.x + h.y + h.z + h.w) / 4.0f, txAuxiliary2.Load(int3(idx, 0)).x);
+
+    float4 n;
+    n = float4(normal, 0.0f);
+
+    float breaking_white = txAuxiliary2.Load(int3(idx, 0)).w;
+    if (max_sd2 * sign(normal.x * in_here.y + normal.y * in_here.z) > dissipation_threshold)
+    {
+        breaking_white = 1.0f;
+    }
+
+    breaking_white = breaking_white * pow(abs(whiteWaterDecayRate), dt);
+
+    float4 aux;
+    aux = float4(maxInundatedDepth, 0.0f, max_sd2, breaking_white);
+
+    txH[id.xy] = h;
+    txU[id.xy] = u;
+    txV[id.xy] = v;
+    txNormal[id.xy] = n;
+    txAuxiliary2Out[id.xy] = aux;
+    txW[id.xy] = w;
+    txC[id.xy] = c;
+}
