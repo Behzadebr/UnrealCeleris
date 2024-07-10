@@ -1,7 +1,7 @@
 # Unreal Engine 5.3 Wave Simulator Project - Celeris2024
 
 ## Overview
-The Unreal Engine 5.3 Wave Simulator Project, part of the Celeris2023 initiative, aims to model wave dynamics with high accuracy using advanced computational technologies. This project showcases extensive software engineering skills, focusing on writing shader code and GPU programming for real-time and faster-than-real-time simulations. Key objectives include capturing detailed wave dynamics, achieving efficient computational performance, and providing a user-friendly interface for simulation control and visualization.
+The Unreal Engine 5.3 Wave Simulator Project, part of the Celeris2023 initiative, aims to model wave dynamics with high accuracy using advanced computational technologies. This project focuses on writing shader code and GPU programming for real-time and faster-than-real-time simulations. Key objectives include capturing detailed wave dynamics, achieving efficient computational performance, and providing a user-friendly interface for simulation control and visualization.
 
 
 ## Simulation Architecture
